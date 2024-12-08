@@ -125,7 +125,7 @@ def get_tax_data_for_each_vat_setting(vat_setting, filters, doctype):
 	fields =['name', 'is_return'])
 
 	for invoice in invoices:
-		invoice_items = frappe.get_list(f'{doctype} Item', 
+		invoice_items = frappe.get_all(f'{doctype} Item', 
 		filters ={
 			'docstatus': 1,
 			'parent': invoice.name,
